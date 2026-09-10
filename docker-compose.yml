@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      - DATABASE_URL
+      - LYZR_SAFE_AI_URL
+      - LYZR_AGENT_API_URL
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    env_file: .env
+
+# Note: This is an example compose file for local development; adjust services and secrets for production.
